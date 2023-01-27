@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %}
+Короче надо везде менять бэкграунд и что типа надо другой css надо?
+{% endcomment %}
+<title>{% block title %}News{% endblock title %} </title>
+{% block header %}
+<section class="sub-header">
+  <nav>
+<!--     <img src="Рисунок1.png" alt="logo"> -->
+     <div class="nav-links" id="navLinks">
+       <i class="fa fa-times" onclick="hideMenu()"></i>
+      <ul>
+        <li><a href="{% url 'base' %}">Home</a></li>
+        <li><a href="{% url 'base2' %}">About</a></li>
+        <li><a href="{% url 'base3' %}">Products</a></li>
+        <li><a href="{% url 'base4' %}">News</a></li>
+        <li><a href="{% url 'base5' %}">Contact</a></li>
+      </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+  <h1>Apple News</h1>
+</section>
+{% endblock header %}
+{% block div %}
+
+{% endblock div %}
+{% block content %}
+<content>
+    <section class="blog-content">
+      <div class="row">
+        <div class="blog-left">
+          <h2>Latest News</h2>
+          <span class="grey">Update</span>
+          <br>
+          <span class="grey1" id="Data"> <span id="dtField"></span></span>
+          <h1>Apple celebrates the holiday season</h1>
+          <div class="text" >
+              <p id="opera" class="drama">"This year’s Holiday Gift Guide features the most innovative lineup ever of iPhone, iPad, Mac, Apple Watch, AirPods, and more."</p>
+          </div>
+          <img  style="position:relative; left:1px;" class="foto" src="{% static 'images/news.png' %}">
+            <p class="ppp">Apple is ringing in the holidays at Apple Store locations and apple.com. Starting today, customers can explore the Holiday Gift Guide online and discover how Apple’s innovative products world-class services keep users connected with friends and family during the holidays.</p>
+          <br>
+          <p class="ppp">“Throughout the holidays and year round, our teams are excited to connect with customers and help them discover Apple’s latest products and services,” said Deirdre O’Brien, Apple’s senior vice president of Retail + People. “In stores and online, customers can get support choosing the device that is right for them, and receive gift ideas for everyone on their list.”</p>
+          <br>
+          <p class="ppp">Apple Store locations around the world serve as a place where communities can together and enjoy personalized advice on purchasing products and services. The Apple Retail experience is the gift that keeps on giving, offering customers in-store support on how to set up their new devices as well as free Today at Apple sessions with tips on how to get the most out of iPhone, iPad, Mac, and Apple Watch across various hardware and software features.</p>
+            <br>
+            <h3 style="width:100%;font-size:18.45px;">If you want to subscribe to the newsletter, leave your details at the bottom:</h3>
+            <div class="comment-box" style="margin-top:20px;">
+            <h3>Leave a email</h3>
+            <form class="comment-form">
+              <input type=text placeholder="Enter full name">
+              <input type=text placeholder="Enter email">
+              <button style="width:128px;height:38px;padding-top:3%;" type="submit" class="btn red-btn"><a style="text-decoration:none; hover:color:white; color:inherit;" href="#error">Post link</a></button>
+                <div id="error" class="modalbackground" style="margin-top:0px;">
+                    <div class="modalwindow" style="padding-bottom:20px;">
+                        <h3>Congratulations</h3>
+                        <p>Thank you for signing up for the newsletter!</p>
+                        <a href=" ">BACK</a>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+       <div class="blog-right">
+         <h3>Popular news of Apple</h3>
+         <select class="box" name="box" onchange="location = this.value;">
+            <option value="#">
+              News by topics
+           </option>
+           <option value="https://www.apple.com/uk/newsroom/topics/app-store/">
+            App Store
+           </option>
+           <option value="https://www.apple.com/newsroom/topics/iphone/">
+             iPhone
+           </option>
+           <option value="https://www.apple.com/uk/newsroom/topics/airpods/">
+             Airpods
+           </option>
+            <option value="https://www.apple.com/uk/newsroom/topics/apple-arcade/">
+            Apple Arcade
+           </option>
+           <option value="https://www.apple.com/uk/newsroom/topics/apple-tv-plus/">
+            Apple TV+
+           </option>
+            <option value="https://www.apple.com/uk/newsroom/topics/company-news/">
+           Company news
+           </option>
+         <option value="https://www.apple.com/uk/newsroom/topics/education/">
+           Education
+           </option>
+         <option value="https://www.apple.com/uk/newsroom/topics/events/">
+           Events
+           </option>
+         </select>
+        </div>
+      </div>
+    </section>
+</content>
+<script>
+window.onload = initDate;
+function initDate() {
+     var dayName = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday");
+     var monName = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+     var now = new Date();
+     var dtString = dayName[now.getDay()] + ", " + monName[now.getMonth()] + " " + now.getDate();
+     document.getElementById("dtField"). innerHTML = dtString;
+}
+</script>
+{% endblock content %}
+
+
+

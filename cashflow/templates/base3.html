@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %}
+Короче надо везде менять бэкграунд и что типа надо другой css надо?
+{% endcomment %}
+<title>{% block title %}Products{% endblock title %} </title>
+{% block header %}
+<section class="sub-header">
+  <nav>
+     <div class="nav-links" id="navLinks">
+       <i class="fa fa-times" onclick="hideMenu()"></i>
+         <ul>
+        <li><a href="{% url 'base' %}">Home</a></li>
+        <li><a href="{% url 'base2' %}">About</a></li>
+        <li><a href="{% url 'base3' %}">Products</a></li>
+        <li><a href="{% url 'base4' %}">News</a></li>
+        <li><a href="{% url 'base5' %}">Contact</a></li>
+        </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+    <h1>Products</h1>
+</section>
+{% endblock header %}
+{% block div %}
+
+{% endblock div %}
+{% block content %}
+<content>
+<section class="company">
+      <h1>New Apple product models 2022 </h1>
+      <p>Discover the innovative world of Apple and start living better.</p>
+      <div class="row">
+        <div class="company_col">
+          <span class="aaaa"><h3>New.</h3></span>
+          <h3>iPhone 14 Pro</h3>
+          <p>A magical new way to interact with iPhone. Groundbreaking safety features designed to save lives. An innovative 48MP camera for mind-blowing detail. All powered by the ultimate smartphone chip.</p>
+        </div>
+        <div class="company_col">
+          <span class="aaaa"><h3>New.</h3></span>
+          <h3 class="applew">Apple Watch Ultra</h3>
+          <p>Meet the most rugged and capable Apple Watch ever. With a robust titanium case, precision dual-frequency GPS, up to 36 hours of battery life,1 the freedom of cellular,2 and three specialized bands made for athletes and adventurers of all kinds.</p>
+        </div>
+        <div class="company_col">
+          <span class="aaaa"><h3>New.</h3></span>
+          <h3>AirPods Pro</h3>
+          <p>AirPods Pro have been reengineered for even richer audio experiences. Spatial Audio takes immersion to a remarkably personal level. Touch control now lets you adjust volume with a swipe. And a leap in power delivers 6 hours of battery life from a single charge..</p>
+        </div>
+      </div>
+</section>
+    <section class="facilities">
+     <h1>Current prices and features</h1>
+    <p>Other Apple products that will please you. Make life better with us!</p>
+    <div class="row2" style="flex-wrap:wrap;">
+
+        {% for i in products %}
+        <div class="bab" id="oppa">
+        <div class="facilities-col">
+            <div class="container">
+                <img  class="mob" id="airpods"  src="{{ i.image_url }}">
+            </div>
+
+        <h3>{{ i.name }} <span style="color: #bf4800;">New</span></h3>
+        <h3>From ${{ i.price }}</h3>
+        <p class="some" id="iphone" >{{ i.description }}</p>
+
+      </div><div id="f" class="buy"><a href="{{ i.get_absolute_url }}" target="_blank">Buy now</a></div>
+        </div>
+
+        {% endfor %}
+
+
+
+    </div>
+        <div class="row2" style="margin-top:5px;">
+
+        </div>
+  </section>
+</content>
+{% endblock content %}
+{% block footer %}
+  <footer class="down">
+     <h4>About Us</h4>
+    <p>Get the most out of the devices you love with high‑quality content and services. Award‑winning series and films, amazing music in spatial audio, world-class workouts and meditations, trusted news publications, superfun games —
+even the ways you pay for things. And they’re only on Apple.</p>
+    <div class="icons" style="margin-bottom:-30px;">
+      <a href="https://www.facebook.com/apple/"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/apple/"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/apple/"><i class="fa fa-linkedin"></i></a>
+      <a href="https://twitter.com/apple"><i class="fa fa-twitter"></i></a>
+    </div>
+<!--    <p>Made with <i class="fa fa-heart"></i></p>-->
+  </footer>
+  <script>
+    var navLinks = document.getElementById("navLinks")
+
+    function showMenu() {
+      navLinks.style.right = "0"
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px"
+    }
+  </script>
+
+{% endblock footer %}

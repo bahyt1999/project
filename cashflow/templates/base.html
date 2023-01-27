@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{% block title %}Home{% endblock title %} </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.css' %}">
+</head>
+<body>
+{% block header %}
+<header>
+  <nav>
+<!--    <img src="{% static 'images/Рисунок1.png'%}" alt="logo">-->
+     <div class="nav-links" id="navLinks">
+       <i class="fa fa-times" onclick="hideMenu()"></i>
+         <ul>
+        <li><a href="{% url 'base' %}">Home</a></li>
+        <li><a href="{% url 'base2' %}">About</a></li>
+        <li><a href="{% url 'base3' %}">Products</a></li>
+        <li><a href="{% url 'base4' %}">News</a></li>
+        <li><a href="{% url 'base5' %}">Contact</a></li>
+        </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+    </header>
+{% endblock header %}
+{% block div %}
+  <div class="textbox">
+    <div id="textbox1"><h1>Apple</h1>
+       <img src="{% static 'images/Рисунок1.png'%}" alt="logo">
+    </div>
+    <p>The best experiences.
+Only on Apple.</p>
+    <a href="{% url 'base2' %}" class="btn">Know More</a>
+  </div>
+{% endblock div %}
+{% block content %}
+<content>
+<section class="company">
+      <h1>Apple's main products</h1>
+      <p>Discover the innovative world of Apple and start living better.</p>
+      <div class="row">
+        <div class="company_col">
+          <h3>iPhone</h3>
+          <p>Smartphones from a well-known company were named iPhone. The first phone was announced in January 2007. He quickly won, thanks to his versatility and novelty.
+What about the name? According to Steve Jobs, it consists of the English word phone and the letter "i". The founder gives it several meanings: the first is Internet, it also means individual, instruct, inform, inspire.</p>
+        </div>
+        <div class="company_col">
+          <h3>Apple WATCH</h3>
+          <p>The first smartwatch from Apple was presented in September 2014. By the way, this is the first product that Steve Jobs didn't have a hand in. The idea and implementation of the gadget belonged to Tim Cook and his team.He was desperate to create perfect devices and remade them until he was satisfied with their quality.</p>
+        </div>
+        <div class="company_col">
+          <h3>AirPods</h3>
+          <p>AirPods are a new generation of headphones that work with Bluetooth. Apple first introduced them in 2016 along with the iPhone 7.These are "smart" devices that respond to your movements. For example, if you take one earphone out of your ear while listening to music, the pause function is triggered. When you put it back, the music automatically turns on.</p>
+        </div>
+      </div>
+</section>
+    <section class="campus">
+      <h1>Apple Retail Stores,United States</h1>
+      <p>Come see the best of Apple at our stores. <a href="https://images.apple.com/retail/storelist/">Find more stores</a></p>
+      <div class="row">
+        <div class="campus-col">
+          <img src="{% static 'images/los.png'%}" alt="Los image">
+          <div class="label"><h3>Los Angeles</h3></div>
+        </div>
+        <div class="campus-col">
+          <img src="{% static 'images/newy.png'%}" alt="New York image">
+          <div class="label"><h3>New York</h3></div>
+        </div>
+        <div class="campus-col">
+          <img src="{% static 'images/sanf.png'%}" alt="San francisco image">
+          <div class="label"><h3>Chicago</h3></div>
+        </div>
+      </div>
+    </section>
+  <section class="facilities">
+     <h1>Another devices</h1>
+    <p>Other Apple products that will please you. Make life better with us!</p>
+    <div class="row">
+      <div class="facilities-col">
+        <img src="{% static 'images/macbook.jpg'%}">
+        <h3 class="Mac">MacBook Pro 13-inch</h3>
+          <div><p class="what" style="word-spacing:-1px;"> The new M2 chip makes the 13‑inch MacBook Pro more capable than ever. The same compact design supports up to 20 hours of battery life and an active cooling system to sustain enhanced performance.</p></div>
+      </div>
+      <div class="facilities-col ipadpro">
+        <img src="{% static 'images/ipad.png'%}">
+        <h3>iPad Pro 11-inch</h3>
+        <p class="ipad pro" style="word-spacing:-1px;">The 11-inch iPad Pro display has rounded corners that follow a beautiful curved design, and these corners are within a standard rectangle. When measured as a standard rectangular shape, the screen is 11 inches diagonally.</p>
+      </div>
+      <div class="facilities-col ipadpro2">
+        <img src="{% static 'images/pult.png'%}">
+        <h3>Apple TV 4K</h3>
+        <p class="TV" >You can enjoy content from Apple TV+, Apple <span style="word-spacing:-1px;">Music, Apple Arcade, Apple Fitness+, and Photos,</span> as well as Prime Video, Netflix, and Disney+, and live channels from Hulu, YouTube TV, and Sling TV.</p>
+      </div>
+    </div>
+  </section>
+  <section class="testimonials">
+      <h1>Testimonials</h1>
+      <p>Our clients say that..</p>
+
+    <div class="row">
+        <div class="testimonials-col">
+          <img src="{% static 'images/face2.jpg'%}">
+          <div>
+            <p>I am so excited using IPhone 14 Pro! Camera, all apps for sending messages, editing photos and other sources, which it has, make my life easier. It seems like I have a personal assistant who regulates the whole my daily routine. Now I am going to buy a Macbook.</p>
+            <h3>Emily Clark</h3>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+        </div>
+        <div class="testimonials-col">
+          <img src="{% static 'images/face3.png'%}">
+          <div>
+            <p>I have been using the MacBook for two years now. It is unbreakable. I hope to use it for at least another 2 years. The charger has gotten a little worse, but that doesn't bother me. I don't plan to buy a laptop yet, but it will be interesting to try its functionality.</p>
+            <h3>Jack Mancaster</h3>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+          </div>
+        </div>
+      </div>
+  </section>
+  <section class="cta">
+<!--    <div class="btn2"><p>Build with <i class="fa fa-apple" aria-hidden="true"></i> One</p></div>-->
+    <h1>The best way to buy the products you love.You can buy online,call or visit.</h1>
+      <a href="{% url 'base5' %}" class="btn">Contact Us</a>
+  </section>
+</content>
+{% endblock content %}
+{% block footer %}
+  <footer>
+     <h4>About Us</h4>
+    <p>Get the most out of the devices you love with high‑quality content and services. Award‑winning series and films, amazing music in spatial audio, world-class workouts and meditations, trusted news publications, superfun games —
+even the ways you pay for things. And they’re only on Apple.</p>
+    <div class="icons" style="margin-bottom:-30px;" >
+      <a href="https://www.facebook.com/apple/"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/apple/"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/apple/"><i class="fa fa-linkedin"></i></a>
+      <a href="https://twitter.com/apple"><i class="fa fa-twitter"></i></a>
+    </div>
+<!--    <p>Made with <i class="fa fa-heart"></i></p>-->
+  </footer>
+  <script>
+    var navLinks = document.getElementById("navLinks")
+
+    function showMenu() {
+      navLinks.style.right = "0"
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px"
+    }
+  </script>
+
+{% endblock footer %}
+{% block section %}
+{% endblock section %}
+
+</body>
+</html>

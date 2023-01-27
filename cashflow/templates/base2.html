@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %}
+Короче надо везде менять бэкграунд и что типа надо другой css надо?
+{% endcomment %}
+<title>{% block title %}About{% endblock title %} </title>
+{% block header %}
+<section class="sub-header">
+  <nav>
+     <div class="nav-links" id="navLinks">
+       <i class="fa fa-times" onclick="hideMenu()"></i>
+         <ul>
+        <li><a href="{% url 'base' %}">Home</a></li>
+        <li><a href="{% url 'base2' %}">About</a></li>
+        <li><a href="{% url 'base3' %}">Products</a></li>
+        <li><a href="{% url 'base4' %}">News</a></li>
+        <li><a href="{% url 'base5' %}">Contact</a></li>
+        </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+    <h1>About us</h1>
+</section>
+{% endblock header %}
+{% block div %}
+
+{% endblock div %}
+{% block content %}
+<content>
+    <section class="about_us">
+      <div class="row">
+        <div class="about-col">
+          <h1>Apple Inc.</h1>
+          <div class="poem"><p id="poem2">We are an American multinational technology company headquartered in Cupertino, California, United States. Apple is the largest technology company by revenue (totaling US$365.8 billion in 2021) and, as of June 2022, is the world's biggest company by market capitalization, the fourth-largest personal computer vendor by unit sales and the most second-largest mobile phone manufacturer.It is one of the Big Five American information technology companies, alongside Alphabet, Amazon, Meta, and Microsoft.Apple was founded as Apple Computer Company on April 1, 1976, by Steve Jobs, Steve Wozniak and Ronald Wayne to develop and sell Wozniak's Apple I personal computer. It was incorporated by Jobs and Wozniak as Apple Computer, Inc. in 1977 and the company's next computer, the Apple II, became the best seller and one of the first mass-produced microcomputers.</p></div>
+          <a href="https://en.wikipedia.org/wiki/Apple_Inc." class="btn red-btn">EXPLORE NOW</a>
+        </div>
+        <div class="about-col">
+            <img src="{% static 'images/2048.jpeg' %}">
+        </div>
+      </div>
+    </section>
+</content>
+{% endblock content %}

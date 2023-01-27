@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.css' %}">
+</head>
+<body>
+<div class="reverse">
+  <div class="send">
+    <div class="success">
+        <h3>Your payment has been successful!</h3>
+    </div>
+    <div id="ok">
+        <a href="{% url 'base3' %}"><button class="button" id="basic"> OK </button></a>
+    </div>
+</div>
+</div>
+
+<!--<p>Сообщение успешно отправлено!<br> Спасибо за обратную связь</p>-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.css' %}">
+</head>
+<body>
+<div class="reverse">
+  <div class="send">
+    <div class="success">
+        <h3>Ваше сообщение успешно отправлено!</h3>
+    </div>
+    <div>
+        <a href="{% url 'base5' %}"><button class="button"> OK </button></a>
+    </div>
+</div>
+</div>
+
+<!--<p>Сообщение успешно отправлено!<br> Спасибо за обратную связь</p>-->
+</body>
+</html>

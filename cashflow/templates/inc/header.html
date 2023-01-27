@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.css' %}">
+</head>
+<body>
+{% block header %}
+<header>
+  <nav>
+<!--    <img src="{% static 'images/Рисунок1.png'%}" alt="logo">-->
+     <div class="nav-links" id="navLinks">
+       <i class="fa fa-times" onclick="hideMenu()"></i>
+         <ul>
+        <li><a href="{% url 'base' %}">Home</a></li>
+        <li><a href="{% url 'base2' %}">About</a></li>
+        <li><a href="{% url 'base3' %}">Products</a></li>
+        <li><a href="{% url 'base4' %}">News</a></li>
+        <li><a href="{% url 'base5' %}">Contact</a></li>
+        </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+    </header>
+{% endblock header %}
+</body>
+</html>

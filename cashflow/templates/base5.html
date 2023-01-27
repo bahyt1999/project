@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{% block title %}Home{% endblock title %} </title>
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}">
+    <link rel=<link rel="stylesheet" href="{% static 'css/style4.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.css' %}">
+</head>
+<body>
+<section class="sub-header">
+  <nav>
+<!--     <img src="Рисунок1.png" alt="logo"> -->
+     <div class="nav-links" id="navLinks">
+       <i class="fa fa-times" onclick="hideMenu()"></i>
+      <ul>
+        <li><a href="{% url 'base' %}">Home</a></li>
+        <li><a href="{% url 'base2' %}">About</a></li>
+        <li><a href="{% url 'base3' %}">Products</a></li>
+        <li><a href="{% url 'base4' %}">News</a></li>
+        <li><a href="{% url 'base5' %}">Contact</a></li>
+      </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+  <h1>Contact Us</h1>
+</section>
+<content>
+    <section class="location">
+      <h2>Stores in United States</h2>
+       <h2>Find one near you</h2>
+   <iframe src="https://yandex.com/map-widget/v1/?um=constructor%3Aa60908b0c58fcc3ce18898deb12b01eb90f7aa347cdec6a4d3401ec0a26d82fc&amp;source=constructor" width="1001" height="475" frameborder="0"></iframe>
+    </section>
+    <section class="contact-us">
+      <div class="row">
+        <div class="contact-col">
+          <div>
+            <i class="fa fa-home"></i>
+            <span>
+              <h4>One Apple Park Way</h4>
+              <p>Cupertino, CA 95014</p>
+            </span>
+          </div>
+          <div>
+            <i class="fa fa-phone"></i>
+            <span>
+              <h4>0800 107 6285</h4>
+              <p>Corporate Address</p>
+            </span>
+          </div>
+          <div>
+            <i class="fa fa-envelope"></i>
+            <span>
+              <h4>apple@gmail.com</h4>
+              <p>24/7</p>
+            </span>
+          </div>
+        </div>
+        <div class="contact-col" id="second" style="margin-top:-10px;">
+          <form class="comment-form"
+          method="POST">
+              {% csrf_token %}
+              {% for item in forms %}
+              {{ item }}
+              {% endfor %}
+              <button style="width:180px;height:40px;padding-top:10px;" type="submit" class="btn red-btn" id="ширина"><a style="text-decoration:none; hover:color:white; color:inherit;">Post message</a></button>
+          </form>
+
+             <div id="error" class="modalbackground" style="margin:0;">
+                  <div class="modalwindow" style="display:inline; margin:15% auto;padding-bottom:20px;">
+                      <h3>Thank you</h3>
+                      <p>Your message has been sent successfully!</p>
+                      <a style="margin:0 70px 0 70px;" href=" ">BACK</a>
+                  </div>
+              </div>
+        </div>
+      </div>
+    </section>
+</content>
+  <footer style="padding: 100px 0 0px 0;">
+     <h4>About Us</h4>
+    <p style="color: #9c9696;font-size: 15px;">Get the most out of the devices you love with high‑quality content and services. Award‑winning series and films, amazing music in spatial audio, world-class workouts and meditations, trusted news publications, superfun games —
+even the ways you pay for things. And they’re only on Apple.</p>
+    <div class="icons" style="margin-bottom:0px;">
+       <a href="https://www.facebook.com/apple/"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/apple/"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/apple/"><i class="fa fa-linkedin"></i></a>
+      <a href="https://twitter.com/apple"><i class="fa fa-twitter"></i></a>
+    </div>
+  </footer>
+  <script>
+    var navLinks = document.getElementById("navLinks")
+
+    function showMenu() {
+      navLinks.style.right = "0"
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px"
+    }
+  </script>
+</body>
+</html>
